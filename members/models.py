@@ -7,7 +7,7 @@ class Member(models.Model):
     phone = models.IntegerField(null=True)
     joined_date = models.DateField(null=True)
     email = models.EmailField(max_length=30, null=True)
-    gener = models.CharField(
+    gender = models.CharField(
         max_length=1, choices=[("M", "Male"), ("F", "Female")], null=True
     )
     birth_date = models.DateField(null=True)

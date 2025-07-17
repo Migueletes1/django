@@ -1,0 +1,16 @@
+{% extends 'master.html' %} {%block title %}Lista de Miembros{% endblock %}
+{%block content %}
+<h1>Lista de Miembros</h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+  </tr>
+  {% for x in mymembers %}
+  <tr class="row-card">
+    <td><a href="details/{{ x.id }}">{{ x.firstname }}</a></td>
+    <td><a href="details/{{ x.id }}">{{ x.lastname }}</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{%endblock content%}

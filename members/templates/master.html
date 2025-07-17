@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Django Framework{% endblock %}</title>
+    <link rel="icon" href="{% static 'assets/images/icon.png' %}" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .navbar {
+        background-color: #14532d;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .nav-links li a:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+
+      main {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        align-self: center;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 0 15px; /* espacio vertical entre filas */
+        width: 100%;
+      }
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        background-color: #ffffff;
+        flex-direction: column;
+      }
+
+      tr {
+        background-color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 1px;
+      }
+
+      tr td {
+        padding: 15px;
+        border-bottom: none;
+        margin: 0;
+      }
+
+      tr:hover {
+        background-color: #f1f5f9;
+        transform: scale(1.01);
+        transition: 0.2s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">DjangoApp</div>
+      <ul class="nav-links">
+        <li><a href="#definicion">Definición</a></li>
+        <li><a href="#funcion">Función</a></li>
+        <li><a href="#estructura">Estructura</a></li>
+        <li><a href="#ventajas">Ventajas</a></li>
+        <li><a href="#desventajas">Desventajas</a></li>
+        <li><a href="#ejemplos">Ejemplos</a></li>
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

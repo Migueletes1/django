@@ -1,13 +1,15 @@
 {% extends 'master.html' %} {%block title %}Miembro{% endblock %}
 {%block content%}
+<section >
     <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
-    <section >
+    
     <p>Phone: {{ mymember.phone }}</p>
     <p>Member since: {{ mymember.joined_date }}</p>
     <p>Email: {{ mymember.email }}</p>
     <p>gender: {{ mymember.gender }}</p>
     <p>birth_date: {{ mymember.birth_date }}</p>
-    </section >
+    
     <p>Back to <a href="/all_members">Members</a></p>
   </body>
+  </section >
 {%endblock content%}

@@ -12,5 +12,8 @@ class Member(models.Model):
     )
     birth_date = models.DateField(null=True)
 
+    def __str__(self):
+        return f"{self.firstname} {self.lastname}"
+
 
 # Create your models here.

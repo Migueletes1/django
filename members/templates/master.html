@@ -6,12 +6,20 @@
     <title>{% block title %}Django Framework{% endblock %}</title>
     <link rel="icon" href="{% static 'assets/images/icon.png' %}" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f7f9fc;
+      body,
+      html {
         margin: 0;
         padding: 0;
-        color: #333;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+      p {
+        color: #555;
+        color: green;
+        font-size: 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
       }
       .navbar {
         background-color: #14532d;
@@ -59,19 +67,27 @@
         height: 50px;
         align-self: center;
       }
+
+      td {
+        display: table-cell;
+        vertical-align: inherit;
+        unicode-bidi: isolate;
+      }
       table {
         border-collapse: separate;
-        border-spacing: 0 15px; /* espacio vertical entre filas */
-        width: 100%;
+        text-indent: initial;
+        border-spacing: 2px;
       }
+
       section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        background-color: #ffffff;
-        flex-direction: column;
+        background: rgba(255, 255, 255, 0.42);
+        border-radius: 15px;
+        padding: 30px;
       }
 
       tr {
@@ -93,9 +109,34 @@
         transform: scale(1.01);
         transition: 0.2s ease;
       }
+      #videoFondo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 15px 0;
+        background: rgba(0, 0, 0, 0.4); /* semitransparente */
+        color: #fff;
+        text-align: center;
+        backdrop-filter: blur(5px); /* efecto difuminado */
+        font-size: 14px;
+        z-index: 999;
+        font-family: Arial, sans-serif;
+      }
     </style>
   </head>
   <body>
+    <video autoplay muted loop id="videoFondo">
+      <source src="{% static 'video.mp4' %}" type="video/mp4" />
+    </video>
     <nav class="navbar">
       <div class="logo">DjangoApp</div>
       <ul class="nav-links">
@@ -107,6 +148,9 @@
         <li><a href="#ejemplos">Ejemplos</a></li>
       </ul>
     </nav>
+    <footer class="footer">
+      <p>&copy; 2025 DjangoApp | Desarrollado por Miguel</p>
+    </footer>
     {% block content %} {% endblock %}
   </body>
 </html>

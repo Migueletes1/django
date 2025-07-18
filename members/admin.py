@@ -11,6 +11,6 @@ class MemberAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Member)
+admin.site.register(Member, MemberAdmin)
 
 # Register your models here.

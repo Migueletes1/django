@@ -13,7 +13,7 @@ class Member(models.Model):
     birth_date = models.DateField(null=True)
 
     def __str__(self):
-        return f"{self.firstname} {self.lastname}"
+        return f"{self.firstname} {self.lastname}{self.joined_date}{self.email}"
 
 
 # Create your models here.

@@ -15,7 +15,6 @@
         font-family: Arial, sans-serif;
       }
       p {
-        color: #555;
         color: green;
         font-size: 20px;
         font-family: Arial, sans-serif;
@@ -74,7 +73,7 @@
         unicode-bidi: isolate;
       }
       table {
-        border-collapse: separate;
+        border-collapse: separate; /* Conflicto potencial */
         text-indent: initial;
         border-spacing: 2px;
       }
@@ -136,6 +135,7 @@
   <body>
     <video autoplay muted loop id="videoFondo">
       <source src="{% static 'video.mp4' %}" type="video/mp4" />
+      Tu navegador no soporta la etiqueta de video.
     </video>
     <nav class="navbar">
       <div class="logo">DjangoApp</div>
